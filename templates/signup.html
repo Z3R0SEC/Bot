@@ -24,17 +24,15 @@
                                     </div>
                                                                                                                                      </div>
                                                                                                                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="alert alert-dismissible alert-danger">
-                            <button type="button" class="close">SIGNUP</button>
+                    
                                   {% if error %}
-                            <br><br><b>{{ error }}</b>
+                            <br><b>{{ error }}</b>
                         </div>
                     </div>
                     {% endif %}
                               <center>
         <button style="boarder-color: solid green; background-color: black; width: 70%;" class="btn btn-default">CREATE ACCOUNT</button>
-         <b>Already A Member ? <a href="{{ url_for('login') }}" style="color: red;">Login</a></b>
+        <br><br> <b>Already A Member ? <a href="{{ url_for('login') }}" style="color: red;">Login</a></b>
          </center>
 
                             </div>
