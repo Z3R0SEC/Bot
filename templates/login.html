@@ -15,19 +15,23 @@
                                 <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                                 <div class="col-lg-10">
                                     <input class="form-control" name="password" id="inputPassword" placeholder="Password" type="password">
-                                    
-     
+
+
                                     </div>
-                                    
+
                                 </div>
                               <center>
         <button style="boarder-color: solid green; background-color: black; width: 70%;" class="btn btn-default">LOGIN</button>
+         <b>Already have a account ? <a href="{{ url_for('signup') }}" style="color: red;">Signup</a><b>
+         {% if error %}
+            <b style="red">{{ error }}</b>
+         {% endif %}
          </center>
-         <b>New Here? <a style="color: red;" href="{{ url_for('signup') }}">signup</a></b>
+
                             </div>
                         </fieldset>
                     </form>
                 </div>
             </div>
-            
+
             {% include 'footer.html' %}
