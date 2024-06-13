@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+<div class="row">
+            <div class="col-lg-6">
+                <div class="well">
+                    <form method="POST" class="form-horizontal">
+                        <fieldset>
+              <center><b>DDOS V2<b><center><br><br>
+     <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input class="form-control" name="url" placeholder="https://yourtarget.com" type="text"><span class="input-group-addon">$</span>
+                            <span class="input-group-btn">
+                            </span>
+                        </div><br>
+  <center>
+      <button class="btn btn-default" style="width: 80%;"><strong>Attack</strong></button>
+  </center>    {% if data %}
+               <b>{{ data }}</b>
+               {% endif %}
+         </center>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+{% include 'footer.html' %}

@@ -1,0 +1,27 @@
+  {% include 'header.html' %}
+  
+  <div class="row">
+            <div class="col-lg-6">
+                <div class="well">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>H4CKR PR0F1L3</legend>
+                                     
+          <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h3 class="panel-title">Your Information</h3></div>
+                    <div class="panel-body">IP: <strong>{{ ip }}</strong></div>
+               <div class="panel-body">NAME: <strong>{{ username }}</strong></div>
+               <div class="panel-body">RANKING: <strong>{{ rank }}</strong></div>
+               <div class="panel-body">JoinDate: <strong>{{ joinDate }}</strong></div>
+               <div class="panel-body">Account Stage: <strong>{{ stage }}</strong></div>
+                </div>
+<center>
+    <a href="{{ url_for('leaderboard') }}" class="btn btn-primary">See Leaderboard</a>
+</center>
+                  </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            {% include 'footer.html' %}

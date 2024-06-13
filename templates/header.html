@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hacker Bootstrap Theme</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='hacker.css') }}">
+
+    <style>
+    .tall-row {
+        margin-top: 40px;
+    }
+    .modal {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        bottom: auto;
+        z-index: 1;
+        display: block;
+    }
+    </style>
+</head>
+
+<body>
+    
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">DOJ4-SYST3M</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">AVAILABLE TOOLS<span class="caret"></span> </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url_for('dos') }}">DDOS ATTACKER</a></li>
+                            <li><a href="">IP TRACER</a></li>
+                            <li><a href="{{ url_for('brute') }}">BRUTEFORCE</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header"></li>
+                            <li><a href="#">ZIP FILE CRACKER</a></li>
+                        </ul>
+                    </li>
+                    {% if session['username'] %}
+                    <li>
+               <a href="{{ url_for('profile') }}" target="_blank"><b>Logged In As {{ session['username'] }}</b></a>
+                    </li>
+                    {% else %}
+                    <li>
+               <a href="{{ url_for('login') }}" target="_blank">Login</a>
+                  </li>
+                  {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+       <!-- starting point -->
+       

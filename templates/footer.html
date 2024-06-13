@@ -1,0 +1,24 @@
+    <!-- end of profile -->
+            <center>
+                <div class="row tall-row">
+            <div class="col-md-12">
+                <p>Brought to You By <a href="//bachittarjeet.github.io">MI4 TEAM</a>. &copy; 2024</p>
+            </div>
+        </div>
+
+            </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <!-- Github stars script -->
+    <script>
+    $(document).ready(function(){
+        $.getJSON("https://api.github.com/repos/Bachittarjeet/Hacker-Bootstrap-Template/", function(data){
+            var stars = data['stargazers_count'];
+            $("#stars").text(stars + " stars");
+        });
+    });
+    </script>
+
+</body>
+</html>

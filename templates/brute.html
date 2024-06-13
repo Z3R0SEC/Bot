@@ -1,0 +1,33 @@
+{% include 'header.html' %}
+<div class="row">
+            <div class="col-lg-6">
+                <div class="well">
+                    <form method="POST" class="form-horizontal">
+                        <fieldset>
+              <center><b>FACEBOOK BRUTE<b><center><br><br>
+     <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input class="form-control" name="target" placeholder="EMAIL or UID / PHONE" type="text"><span class="input-group-addon">$</span>
+                            <span class="input-group-btn">
+                            </span>
+                        </div><br>
+  <center>
+      <button class="btn btn-default" style="width: 80%;"><strong>Attack</strong></button>
+  </center>
+               <br>
+               {% if error %}
+               <b style="color: red;">{{ error }}</b>
+               {% endif %}
+               <br>
+               {% if info %}
+               <b>[ PASSWORD FOUND ]<b><br>
+               <b>User: {{ info }}</b><br>
+               <b>Password: {{ pa }}</b>
+               {% endif %}
+         </center>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+{% include 'footer.html' %}
