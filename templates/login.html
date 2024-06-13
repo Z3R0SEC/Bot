@@ -22,9 +22,9 @@
                                 </div>
                               <center>
         <button style="boarder-color: solid green; background-color: black; width: 70%;" class="btn btn-default">LOGIN</button>
-         <b>Already have a account ? <a href="{{ url_for('signup') }}" style="color: red;">Signup</a><b>
+        <br> <b>Already a member? <a href="{{ url_for('signup') }}" style="color: yellow;">Signup</a><b>
          {% if error %}
-            <b style="red">{{ error }}</b>
+           <br><br> <b style="red">{{ error }}</b>
          {% endif %}
          </center>
 
