@@ -168,7 +168,7 @@ def brute():
            reso = requests.post(api_url, data=req, headers=headers)
            resp = reso.json()
            resp = reso.json()
-           g.db.execute('INSERT INTO rankings (user_id, user) VALUES (?, ?)', [session['user_id'], user])
+           g.db.execute('INSERT INTO rankings (user_id, url) VALUES (?, ?)', [session['user_id'], user])
            g.db.execute('UPDATE users SET games_played = games_played + 1 WHERE id = ?', [session['user_id']])
            g.db.commit()
            if 'access_token' in resp:
